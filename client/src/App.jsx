@@ -1,12 +1,18 @@
 import { useState } from 'react';
 import reactLogo from './assets/react.svg';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import MainDeck from './MainDeck/MainDeck';
+import CreateDeck from './CreateDeck/CreateDeck';
 
 function App() {
   return (
-    <div>
-      <p>Hello World</p>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<MainDeck />} />
+        <Route path="/createdeck" element={<CreateDeck />} />
+      </Routes>
+    </Router>
   );
 }
 
